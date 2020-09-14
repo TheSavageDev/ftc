@@ -1,9 +1,8 @@
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
-import Layout from "../layouts/Layout"
-import Newsletter from "../components/Newsletter"
 import SiteMetadata from "../components/SiteMetadata"
+import Layout from "../layouts/Layout"
 
 const AboutPage = ({ data }) => (
   <Layout>
@@ -52,7 +51,7 @@ const AboutPage = ({ data }) => (
         </div>
       </div>
     </div>
-    <Newsletter />
+    
   </Layout>
 )
 

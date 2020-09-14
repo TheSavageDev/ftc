@@ -1,6 +1,7 @@
+import { Image } from "cloudinary-react"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import { FaFacebook, FaInstagram, FaTwitter, FaPinterest } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaPinterest, FaTwitter } from "react-icons/fa"
 
 const Footer = () => {
   const {
@@ -23,8 +24,8 @@ const Footer = () => {
   `)
 
   return (
-    <div className="container py-12 md:flex md:items-center md:justify-between">
-      <ul className="flex justify-center md:order-2">
+    <div className="container py-12 md:flex md:items-center md:justify-between bg-teal text-white">
+      <ul className="flex justify-center md:order-3">
         <FooterLink href={links.twitter} icon={FaTwitter} label="Twitter" />
         <FooterLink href={links.facebook} icon={FaFacebook} label="Facebook" />
         <FooterLink
@@ -38,9 +39,10 @@ const Footer = () => {
           label="Pinterest"
         />
       </ul>
+      <Image className="md:order-2" cloudName="thesavagedev" publicId="FTC/Logos/jsykgs9nwikgx89jqqzt"/>
       <div className="mt-8 md:mt-0 md:order-1">
-        <p className="text-center text-sm md:text-base text-gray-700">
-          &copy; 2020 John Doe. All rights reserved.
+        <p className="text-center text-sm md:text-base">
+          &copy; 2020 Foldaway Trailer Company.<br /> All rights reserved.
         </p>
       </div>
     </div>

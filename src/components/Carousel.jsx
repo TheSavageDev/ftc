@@ -1,10 +1,9 @@
-import Img from "gatsby-image"
 import PropTypes from "prop-types"
 import React from "react"
 import Swiper from "react-id-swiper"
-
 import "swiper/css/swiper.css"
 import "./Carousel.css"
+
 
 export const Carousel = ({ images }) => {
   const swiperParams = {
@@ -16,14 +15,15 @@ export const Carousel = ({ images }) => {
   }
   return (
     <Swiper {...swiperParams}>
-      {images.map(image => {
+      {images.map(({ node }) => {
         return (
-          <div key={`slide_${image.id}`}>
-            <Img
-              fluid={image.localFile.childImageSharp.fluid}
-              alt={image.title}
+          <span key={`slide_${node.id}`}>
+            <img
+              className="rounded shadow border-none max-w-sm h-auto"
+              src={node.url}
+              alt={node.url}
             />
-          </div>
+          </span>
         )
       })}
     </Swiper>

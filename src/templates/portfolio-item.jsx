@@ -1,11 +1,10 @@
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import React from "react"
-import SiteMetadata from "../components/SiteMetadata"
 import Button from "../components/Button"
 import Cards from "../components/Cards"
 import Carousel from "../components/Carousel"
-import Newsletter from "../components/Newsletter"
+import SiteMetadata from "../components/SiteMetadata"
 import Layout from "../layouts/Layout"
 
 export default props => {
@@ -69,7 +68,7 @@ export default props => {
           <Cards items={related} hideLastItemOnMobile={true} />
         </div>
       )}
-      <Newsletter />
+      
     </Layout>
   )
 }

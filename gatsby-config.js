@@ -8,23 +8,10 @@ if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_ACCESS_TOKEN) {
   )
 }
 
+const settings = require("./src/util/site.json")
+
 module.exports = {
-  siteMetadata: {
-    menu: [
-      { name: "Home", to: "/" },
-      { name: "About", to: "/about" },
-    ],
-    links: {
-      facebook: "https://www.facebook.com/",
-      instagram: "https://www.instagram.com/",
-      pinterest: "https://pinterest.com/",
-      twitter: "https://twitter.com/",
-    },
-    locale: "en",
-    title: `John Doe`,
-    description: `Photography portfolio of John Doe`,
-    author: `@johndoe`,
-  },
+  siteMetadata: settings.meta,
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
@@ -36,6 +23,7 @@ module.exports = {
         downloadLocal: true,
       },
     },
+    `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -44,6 +32,46 @@ module.exports = {
       },
     },
     `gatsby-transformer-sharp`,
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        type: `upload`,
+        prefix: `FTC/Logos`,
+        maxResults: 50,
+      }
+    },
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `image`,
+        type: `upload`,
+        prefix: `FTC/ProductImages/`,
+        maxResults: 50,
+      },
+    },
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        resourceType: `video`,
+        type: `upload`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: settings.ga,
+      },
+    },
     `gatsby-plugin-sharp`,
     {
       resolve: "gatsby-plugin-mailchimp",
@@ -52,10 +80,19 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-transformer-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDINARY_CLOUD_NAME,
+        apiKey: process.env.CLOUDINARY_API_KEY,
+        apiSecret: process.env.CLOUDINARY_API_SECRET,
+        uploadFolder: 'gatsby-cloudinary',
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `John Doe`,
-        short_name: `johndoe`,
+        name: `Foldaway Trailer Company`,
+        short_name: `ftc`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#3182ce`,
@@ -63,5 +100,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
+    'gatsby-plugin-offline',
   ],
 }
