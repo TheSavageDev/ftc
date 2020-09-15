@@ -20,7 +20,7 @@ const GalleryPage = ({ data }) => {
             <div className="flex flex-wrap">
               {edges?.map(({ node }) => (
                 <div className="w-6/12 sm:w-4/12 px-2" key={node.public_id}>
-                  <Image cloudName="thesavagedev" publicId={node.public_id} className="rounded shadow border-none max-w-sm h-auto" src={node.url} alt="image" />
+                  <Image cloudName="thesavagedev" publicId={node.public_id} className="rounded shadow border-none max-w-sm h-auto" src={node.url} alt="image" secure={true} />
                 </div>
               ))}
             </div>
