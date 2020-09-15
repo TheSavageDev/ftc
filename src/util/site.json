@@ -1,0 +1,24 @@
+{
+  "meta": {
+    "siteUrl": "https://www.foldawaytrailer.com",
+    "menu": [
+      { "name": "Home", "to": "/" },
+      { "name": "Specs", "to": "/specs" },
+      { "name": "Contact", "to": "/contact" },
+      { "name": "Get One", "to": "/purchase" },
+      { "name": "Gallery", "to": "/gallery" },
+      { "name": "Accessories", "to": "/accessories" }
+    ],
+    "links": {
+      "facebook": "https://www.facebook.com/",
+      "instagram": "https://www.instagram.com/",
+      "pinterest": "https://pinterest.com/",
+      "twitter": "https://twitter.com/"
+    },
+    "locale": "en",
+    "title": "Foldaway Tailer Company",
+    "description": "Trailer that folds away.",
+    "author": "@thesavage_dev"
+  },
+  "ga": ""
+}
