@@ -30,8 +30,8 @@ const IndexPage = ({ data }) => {
                 <Slide index={index} key={node.id}>
                   <Image
                     className="rounded shadow border-none h-auto max-w-lg align-middle justify-center"
-                    src={node.url}
-                    alt={node.url}
+                    publicId={node.public_id}
+                    alt={node.secure_url}
                     secure="true"
                   >
                     <Transformation crop="fit" />
@@ -58,7 +58,7 @@ export const query = graphql`
           format
           height
           width
-          url
+          secure_url
         }
       }
     }
