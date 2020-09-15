@@ -39,7 +39,7 @@ const Footer = () => {
           label="Pinterest"
         />
       </ul>
-      <Image className="md:order-2" cloudName="thesavagedev" publicId="FTC/Logos/jsykgs9nwikgx89jqqzt"/>
+      <Image className="md:order-2" cloudName="thesavagedev" publicId="FTC/Logos/jsykgs9nwikgx89jqqzt" secure="true" />
       <div className="mt-8 md:mt-0 md:order-1">
         <p className="text-center text-sm md:text-base">
           &copy; 2020 Foldaway Trailer Company.<br /> All rights reserved.

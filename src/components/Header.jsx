@@ -24,7 +24,7 @@ const Header = () => {
     <div className="container pt-6 pb-12 md:pt-12 bg-blue text-orange">
       <div className="flex justify-between items-center">
         <Link to="/">
-          <Image cloudName="thesavagedev" publicId="FTC/Logos/morbybaqrvv0sxhheqax">
+          <Image cloudName="thesavagedev" publicId="FTC/Logos/morbybaqrvv0sxhheqax" secure="true">
             <Transformation crop="fit" width="200" />
           </Image>
         </Link>

@@ -59,6 +59,7 @@ const AboutPage = ({ data }) => (
               alt="Trailer tire"
               publicId="FTC/ProductImages/bdr87ccwxufjd2qo8uip"
               className="rounded-md shadow-md"
+              secure="true"
             />
           </div>
         </div>
