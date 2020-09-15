@@ -29,6 +29,7 @@ const IndexPage = ({ data }) => {
               {images?.map(({ node }, index) => (
                 <Slide index={index} key={node.id}>
                   <Image
+                    cloudName="thesavagedev"
                     className="rounded shadow border-none h-auto max-w-lg align-middle justify-center"
                     publicId={node.public_id}
                     alt={node.secure_url}
