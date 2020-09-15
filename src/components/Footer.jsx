@@ -24,8 +24,8 @@ const Footer = () => {
   `)
 
   return (
-    <div className="container py-12 md:flex md:items-center md:justify-between bg-teal text-white">
-      <ul className="flex justify-center md:order-3">
+    <footer className="container flex py-2 items-center flex-col bg-teal text-white lg:flex-row lg:justify-between">
+      <ul className="flex mb-4 justify-center lg:order-3 lg:mb-0">
         <FooterLink href={links.twitter} icon={FaTwitter} label="Twitter" />
         <FooterLink href={links.facebook} icon={FaFacebook} label="Facebook" />
         <FooterLink
@@ -39,13 +39,13 @@ const Footer = () => {
           label="Pinterest"
         />
       </ul>
-      <Image className="md:order-2" cloudName="thesavagedev" publicId="FTC/Logos/jsykgs9nwikgx89jqqzt" secure="true" />
-      <div className="mt-8 md:mt-0 md:order-1">
-        <p className="text-center text-sm md:text-base">
+      <Image className="lg:order-2" cloudName="thesavagedev" publicId="FTC/Logos/jsykgs9nwikgx89jqqzt" secure="true" />
+      <section className="mt-8 lg:order-1 lg:mt-0">
+        <p className="text-center text-sm">
           &copy; 2020 Foldaway Trailer Company.<br /> All rights reserved.
         </p>
-      </div>
-    </div>
+      </section>
+    </footer>
   )
 }
 

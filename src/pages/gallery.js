@@ -1,4 +1,4 @@
-import { Image } from 'cloudinary-react'
+import { Image, Transformation } from 'cloudinary-react'
 import { graphql } from "gatsby"
 import React from "react"
 import SiteMetadata from "../components/SiteMetadata"
@@ -7,31 +7,23 @@ import Layout from "../layouts/Layout"
 const GalleryPage = ({ data }) => {
   const { edges } = data.allCloudinaryMedia
   return (
-  <Layout>
-    <SiteMetadata title="About" description="Sample description" />
-
-    <div className="bg-blue-900">
-      <div className="container py-4 lg:pb-16">
-        <div className="flex flex-wrap">
-          <div className="w-full pb-8 md:pb-0">
-            <h1 className="text-3xl leading-tight font-extrabold tracking-tight pb-2 text-gray-100 sm:text-4xl">
-              Gallery
-            </h1>
-            <div className="flex flex-wrap">
-              {edges?.map(({ node }) => (
-                <div className="w-6/12 sm:w-4/12 px-2" key={node.public_id}>
-                  <Image cloudName="thesavagedev" publicId={node.public_id} className="rounded shadow border-none max-w-sm h-auto" alt="image" secure="true" />
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    
-  </Layout>
-)
-              }
+    <Layout>
+      <SiteMetadata title="Gallery" description="Product Images" />
+      <section className="container py-6 flex flex-wrap w-full">
+        <h1 className="text-3xl leading-tight font-extrabold tracking-tight pb-2 text-gray-100">
+          Gallery
+        </h1>
+        <article className="flex flex-wrap justify-evenly">
+          {edges?.map(({ node }) => (
+            <Image key={node.id} cloudName="thesavagedev" publicId={node.public_id} className="rounded-lg shadow border-none h-auto lg:w-1/4 lg:my-1 xl:w-2/12" alt="image" secure="true">
+              <Transformation crop="fit" />
+            </Image>
+          ))}
+        </article>
+        </section>    
+    </Layout>
+  )
+}
 
 export default GalleryPage
 

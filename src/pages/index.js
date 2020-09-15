@@ -9,17 +9,15 @@ import Layout from "../layouts/Layout";
 const IndexPage = ({ data }) => {
   const images = data.images.edges
   const video = data.videos.edges[0].node
-  console.log(video);
   return (
     <Layout>
       <SiteMetadata title="Home" description="Website for Foldaway Tailer Company" />
-
       <Hero />
-      <div className="container flex pb-4">
-        <div className="w-1/2">
-          <Video cloudName="thesavagedev" publicId={video.public_id} autoPlay />
-        </div>
-        <div className="w-1/2">
+      <section className="container flex flex-col pb-4 lg:flex-row">
+        <article className="w-full lg:w-1/2">
+          <Video cloudName="thesavagedev" publicId={video.public_id} />
+        </article>
+        <article className="w-full lg:w-1/2">
           <CarouselProvider
             totalSlides={7}
             naturalSlideHeight={135}
@@ -30,7 +28,7 @@ const IndexPage = ({ data }) => {
                 <Slide index={index} key={node.id}>
                   <Image
                     cloudName="thesavagedev"
-                    className="rounded shadow border-none h-auto max-w-lg align-middle justify-center"
+                    className="rounded shadow border-none h-auto align-middle justify-center max-w-6"
                     publicId={node.public_id}
                     alt={node.secure_url}
                     secure="true"
@@ -41,8 +39,8 @@ const IndexPage = ({ data }) => {
               ))}
             </Slider>
           </CarouselProvider>
-        </div>
-      </div>
+        </article>
+      </section>
     </Layout>
   )
 }

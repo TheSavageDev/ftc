@@ -1,5 +1,5 @@
-import { Link } from "gatsby"
 import { motion } from "framer-motion"
+import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 import Overlay from "./Overlay"
@@ -26,7 +26,7 @@ const menuItem = {
 const MenuMobile = ({ links, isOpen, setIsOpen }) => {
   return (
     <Overlay isOpen={isOpen} setIsOpen={setIsOpen}>
-      <div className="container flex flex-col justify-center">
+      <nav className="container flex flex-col justify-center">
         <ul className="text-center">
           {links.map((link, key) => (
             <motion.li
@@ -38,7 +38,7 @@ const MenuMobile = ({ links, isOpen, setIsOpen }) => {
             >
               <Link
                 className="font-semibold text-4xl text-white"
-                activeClassName="text-blue-500"
+                activeClassName="text-blue"
                 to={link.to}
                 onClick={() => setIsOpen(false)}
               >
@@ -47,7 +47,7 @@ const MenuMobile = ({ links, isOpen, setIsOpen }) => {
             </motion.li>
           ))}
         </ul>
-      </div>
+      </nav>
     </Overlay>
   )
 }

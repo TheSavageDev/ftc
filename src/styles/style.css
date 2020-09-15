@@ -1,7 +1,11 @@
 @tailwind base;
 
+html {
+  @apply .h-full;
+}
+
 body {
-  @apply .bg-white .font-sans .antialiased;
+  @apply .bg-white .font-sans .antialiased .h-full;
 }
 
 @tailwind components;
@@ -10,6 +14,11 @@ body {
 
 .container {
   @apply .max-w-screen-xl .mx-auto .px-4;
+}
+
+#___gatsby,
+#gatsby-focus-wrapper {
+  @apply .h-full;
 }
 
 @screen md {
