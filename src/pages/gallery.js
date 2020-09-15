@@ -10,17 +10,29 @@ const GalleryPage = ({ data }) => {
     <Layout>
       <SiteMetadata title="Gallery" description="Product Images" />
       <section className="container py-6 flex flex-wrap w-full">
-        <h1 className="text-3xl leading-tight font-extrabold tracking-tight pb-2 text-gray-100">
+        <h1 className="text-3xl leading-tight font-extrabold tracking-tight pb-2 text-black">
           Gallery
         </h1>
-        <article className="flex flex-wrap justify-evenly">
-          {edges?.map(({ node }) => (
-            <Image key={node.id} cloudName="thesavagedev" publicId={node.public_id} className="rounded-lg shadow border-none h-auto lg:w-1/4 lg:my-1 xl:w-2/12" alt="image" secure="true">
-              <Transformation crop="fit" />
-            </Image>
-          ))}
+        <article>
+          <ul className="flex flex-wrap">
+            {edges?.map(({ node }) => (
+              <li className="h-40 flex-grow m-0 p-0">
+                <Image 
+                  key={node.id}
+                  cloudName="thesavagedev"
+                  publicId={node.public_id}
+                  className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
+                  alt="image"
+                  secure="true"
+                >
+                  <Transformation crop="fit" />
+                </Image>
+              </li>
+            ))}
+            <li className="flex-grow"></li>
+          </ul>
         </article>
-        </section>    
+      </section>    
     </Layout>
   )
 }

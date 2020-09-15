@@ -28,7 +28,7 @@ const IndexPage = ({ data }) => {
                 <Slide index={index} key={node.id}>
                   <Image
                     cloudName="thesavagedev"
-                    className="rounded shadow border-none h-auto align-middle justify-center max-w-6"
+                    className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
                     publicId={node.public_id}
                     alt={node.secure_url}
                     secure="true"
