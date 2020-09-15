@@ -32,6 +32,7 @@ const IndexPage = ({ data }) => {
                     className="rounded shadow border-none h-auto max-w-lg align-middle justify-center"
                     src={node.url}
                     alt={node.url}
+                    secure="true"
                   >
                     <Transformation crop="fit" />
                   </Image>
