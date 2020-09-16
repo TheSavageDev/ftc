@@ -13,11 +13,9 @@ const GalleryPage = ({ data }) => {
 
   const { edges } = data.allCloudinaryMedia
   const handleOpenBigImage = index => {
-    console.log('CLICK MOTHERFUCKER')
     setImageIndex(index);
     setBigPid(edges[index].node.public_id);
     setIsOpen(true);
-    console.log(isOpen)
   }
 
   const handleNext = () => handleOpenBigImage(imageIndex + 1);
