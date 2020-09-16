@@ -16,7 +16,11 @@ module.exports = {
       white: '#fffff0',
       grey: '#f3f3f3',
       black: '#232323',
-      overlay: 'rgba(0, 0, 0, 0.6)'
+      overlay: 'rgba(0, 0, 0, 0.6)',
+      failure: '#e74c3c',
+      success: '#2ecc71',
+      warning: '#f1c40f',
+      info: '#316fbf',
     }
   },
   variants: {
