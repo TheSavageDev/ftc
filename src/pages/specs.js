@@ -45,7 +45,7 @@ const SpecsPage = () => (
           <Image
             cloudName="thesavagedev"
             alt="Trailer tire"
-            publicId="FTC/ProductImages/bdr87ccwxufjd2qo8uip"
+            publicId="FTC/ProductImages/Gallery%20025"
             className="rounded-lg shadow-md"
             secure="true"
           />

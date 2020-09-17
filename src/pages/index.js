@@ -9,6 +9,10 @@ import Layout from "../layouts/Layout";
 const IndexPage = ({ data }) => {
   const images = data.images.edges
   const video = data.videos.edges[0].node
+
+  const handleRebuild = () => {
+    fetch('https://api.netlify.com/build_hooks/5f624edcb0ade21370d21f3e', { method: 'POST' })
+  }
   return (
     <Layout>
       <SiteMetadata title="Home" description="Website for Foldaway Tailer Company" />
@@ -39,6 +43,10 @@ const IndexPage = ({ data }) => {
               ))}
             </Slider>
           </CarouselProvider>
+        </article>
+        <article className="mx-auto">
+          <img alt="Netlify" src="https://img.shields.io/netlify/d9859da3-d684-4c5a-8cdc-b3c310381a6d?label=BUILD&style=for-the-badge" className="my-4" />
+          <button type="button" className="text-white rounded-xl border bg-blue inline-block p-3 text-2xl hover:bg-teal" onClick={handleRebuild}>Click to Rebuild</button>
         </article>
       </section>
     </Layout>
