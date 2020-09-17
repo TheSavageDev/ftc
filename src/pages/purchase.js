@@ -10,9 +10,13 @@ const PurchasePage = () => (
           <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-black p-0">
             Get One
           </h1>
-          <h2 className="text-xl leading-tight font-semibold tracking-tight text-blue">
-            We'd love to hear from you.
-          </h2>
+          <p className="text-xl leading-tight font-semibold tracking-tight text-blue">
+            Currently we’re in pre-production providing a few trailers to customers for testing and recommended improvements.
+          </p>
+
+          <p className="text-xl leading-tight font-semibold tracking-tight text-blue">
+            If you’d like to purchase a Foldaway Trailer, or participate in our testing program, please let us know using the form below and we’ll get back with you.
+          </p>
         </header>
         <form className="bg-grey shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mt-5 w-full" action="/thanks" name="purchase" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="purchase" />
