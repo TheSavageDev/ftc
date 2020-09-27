@@ -60,7 +60,7 @@ export default IndexPage
 
 export const query = graphql`
   query SequenceQuery {
-    images: allCloudinaryMedia(filter: {public_id: {regex: "/FTC\/ProductImages\/Sequence/"}}, sort: {fields: public_id, order: ASC}) {
+    images: allCloudinaryMedia(filter: {public_id: {regex: "/FTC\/Slideshow/"}}, sort: {fields: public_id, order: ASC}) {
       edges {
         node {
           public_id

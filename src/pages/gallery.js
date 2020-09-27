@@ -12,6 +12,12 @@ const GalleryPage = ({ data }) => {
   const [imageIndex, setImageIndex] = React.useState();
 
   const { edges } = data.allCloudinaryMedia
+  document.addEventListener('keydown', event => {
+    if (event.isComposing || event.code === 229) {
+      // handleOpenBigImage(event.target.index);
+      console.log(event.target)
+    }
+  })
   const handleOpenBigImage = index => {
     setImageIndex(index);
     setBigPid(edges[index].node.public_id);
@@ -30,8 +36,8 @@ const GalleryPage = ({ data }) => {
         <article>
           <ul className="flex flex-wrap">
             {edges?.map(({ node }, index) => (
-              <li key={node.id} id={node.id} className="h-40 flex-grow m-0 p-0" onClick={() => handleOpenBigImage(index)}>
-                <Image 
+              <li key={node.id} id={node.id} tab-index="1" className="h-40 flex-grow m-0 p-0" onClick={() => handleOpenBigImage(index)}>
+                <Image
                     cloudName="thesavagedev"
                     publicId={node.public_id}
                     className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
@@ -47,7 +53,7 @@ const GalleryPage = ({ data }) => {
           </ul>
         </article>
       </section>
-      <Modal isOpen={isOpen} setIsOpen={setIsOpen} publicId={bigPid} handleNext={handleNext} handlePrev={handlePrev} />  
+      <Modal isOpen={isOpen} setIsOpen={setIsOpen} publicId={bigPid} handleNext={handleNext} handlePrev={handlePrev} />
     </Layout>
   )
 }

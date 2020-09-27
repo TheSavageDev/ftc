@@ -37,6 +37,14 @@ module.exports = {
       resolve:`gatsby-source-cloudinary`,
       options: {
         ...cloudinary,
+        resourceType: `image`,
+        prefix: `FTC/Slideshow/`,
+      },
+    },
+    {
+      resolve:`gatsby-source-cloudinary`,
+      options: {
+        ...cloudinary,
         resourceType: `video`,
       },
     },

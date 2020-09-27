@@ -14,13 +14,13 @@ const ContactPage = () => (
             We'd love to hear from you.
           </h2>
         </header>
-        <form className="bg-grey shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mt-5 lg:w-full" action="/thanks" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
+        <form className="bg-grey shadow-md rounded-lg px-8 pt-6 pb-8 mb-4 mt-5 lg:w-full" name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="contact" />
-            <label className="block text-black text-sm font-bold mb-2" htmlFor="name">Name</label>   
+            <label className="block text-black text-sm font-bold mb-2" htmlFor="name">Name</label>
             <input type="text" name="name" id="name" className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" />
             <label className="block text-black text-sm font-bold mb-2" htmlFor="email">Email</label>
             <input type="email" name="email" id="email" className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" />
-            <label className="block text-black text-sm font-bold mb-2" htmlFor="subject">Subject</label>   
+            <label className="block text-black text-sm font-bold mb-2" htmlFor="subject">Subject</label>
             <input type="text" name="subject" id="subject" className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline" />
             <label className="block text-black text-sm font-bold mb-2" htmlFor="message">Message</label>
             <textarea name="message" id="message" className="shadow appearance-none border rounded-lg w-full py-2 px-3 text-black leading-tight focus:outline-none focus:shadow-outline"></textarea>
