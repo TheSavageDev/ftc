@@ -12,12 +12,7 @@ const GalleryPage = ({ data }) => {
   const [imageIndex, setImageIndex] = React.useState();
 
   const { edges } = data.allCloudinaryMedia
-  document.addEventListener('keydown', event => {
-    if (event.isComposing || event.code === 229) {
-      // handleOpenBigImage(event.target.index);
-      console.log(event.target)
-    }
-  })
+
   const handleOpenBigImage = index => {
     setImageIndex(index);
     setBigPid(edges[index].node.public_id);
