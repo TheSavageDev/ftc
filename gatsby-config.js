@@ -1,13 +1,5 @@
 require("dotenv").config()
 
-const { CONTENTFUL_SPACE_ID, CONTENTFUL_ACCESS_TOKEN } = process.env
-
-if (!CONTENTFUL_SPACE_ID || !CONTENTFUL_ACCESS_TOKEN) {
-  throw new Error(
-    "Contentful spaceId and the access token need to be provided."
-  )
-}
-
 const settings = require("./src/util/site.json")
 
 module.exports = {
@@ -15,14 +7,6 @@ module.exports = {
   plugins: [
     `gatsby-plugin-postcss`,
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-contentful`,
-      options: {
-        spaceId: CONTENTFUL_SPACE_ID,
-        accessToken: CONTENTFUL_ACCESS_TOKEN,
-        downloadLocal: true,
-      },
-    },
     `gatsby-plugin-advanced-sitemap`,
     {
       resolve: `gatsby-source-filesystem`,
