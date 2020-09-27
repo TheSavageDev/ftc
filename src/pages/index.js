@@ -19,7 +19,10 @@ const IndexPage = ({ data }) => {
       <Hero />
       <section className="container flex flex-col pb-4 lg:flex-row">
         <article className="w-full lg:w-1/2">
-          <Video cloudName="thesavagedev" publicId={video.public_id} />
+          <Video
+          cloudName="thesavagedev"
+          publicId={video.public_id}
+          controls="true" />
         </article>
         <article className="w-full lg:w-1/2">
           <CarouselProvider

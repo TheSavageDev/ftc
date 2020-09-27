@@ -1,7 +1,7 @@
 import { Image } from "cloudinary-react"
 import { graphql, useStaticQuery } from "gatsby"
 import React from "react"
-import { FaFacebook, FaInstagram, FaPinterest, FaTwitter } from "react-icons/fa"
+import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa"
 
 const Footer = () => {
   const {
@@ -15,7 +15,6 @@ const Footer = () => {
           links {
             facebook
             instagram
-            pinterest
             twitter
           }
         }
@@ -32,11 +31,6 @@ const Footer = () => {
           href={links.instagram}
           icon={FaInstagram}
           label="Instagram"
-        />
-        <FooterLink
-          href={links.pinterest}
-          icon={FaPinterest}
-          label="Pinterest"
         />
       </ul>
       <Image className="lg:order-2" cloudName="thesavagedev" publicId="FTC/Logos/jsykgs9nwikgx89jqqzt" secure="true" />

@@ -12,7 +12,6 @@
     "links": {
       "facebook": "https://www.facebook.com/",
       "instagram": "https://www.instagram.com/",
-      "pinterest": "https://pinterest.com/",
       "twitter": "https://twitter.com/"
     },
     "locale": "en",
@@ -20,5 +19,14 @@
     "description": "Trailer that folds away.",
     "author": "@thesavage_dev"
   },
-  "ga": ""
+  "ga": "",
+  "manifest": {
+    "name": "Foldaway Trailer Company",
+    "short_name": "ft",
+    "start_url": "/",
+    "background_color": "#fffff",
+    "theme_color": "#3182c",
+    "display": "minimal-u",
+    "icon": "src/images/icon.pn"
+  }
 }
