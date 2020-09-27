@@ -24,9 +24,9 @@
     "name": "Foldaway Trailer Company",
     "short_name": "ft",
     "start_url": "/",
-    "background_color": "#fffff",
-    "theme_color": "#3182c",
-    "display": "minimal-u",
-    "icon": "src/images/icon.pn"
+    "background_color": "#ffffff",
+    "theme_color": "#3182cf",
+    "display": "minimal-ui",
+    "icon": "src/images/icon.png"
   }
 }
