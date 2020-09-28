@@ -10,9 +10,6 @@ const IndexPage = ({ data }) => {
   const images = data.images.edges
   const video = data.videos.edges[0].node
 
-  const handleRebuild = () => {
-    fetch('https://api.netlify.com/build_hooks/5f624edcb0ade21370d21f3e', { method: 'POST' })
-  }
   return (
     <Layout>
       <SiteMetadata title="Home" description="Website for Foldaway Tailer Company" />
@@ -30,13 +27,14 @@ const IndexPage = ({ data }) => {
             naturalSlideHeight={135}
             naturalSlideWidth={250}
             touchEnabled={true}
+            className="relative w-full h-full"
           >
-            <Slider>
+            <Slider className="absolute w-full h-full">
               {images?.map(({ node }, index) => (
                 <Slide index={index} key={node.id} className="flex justify-evenly">
                   <Image
                     cloudName="thesavagedev"
-                    className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
+                    className="border-none max-w-full object-cover align-bottom m-0 p-0 justify-center"
                     publicId={node.public_id}
                     alt={node.secure_url}
                     secure="true"
@@ -46,15 +44,9 @@ const IndexPage = ({ data }) => {
                 </Slide>
               ))}
             </Slider>
-            <article className="flex justify-between">
-              <ButtonBack>Back</ButtonBack>
-              <ButtonNext>Next</ButtonNext>
-            </article>
+              <ButtonBack className="absolute inset-y-0 left-0 px-5 py-3 font-medium leading-snug border-none text-base text-white bg-black opacity-25 hover:opacity-100 transition duration-150 ease-in-out">&lt;</ButtonBack>
+              <ButtonNext className="absolute inset-y-0 right-0 px-5 py-3 font-medium leading-snug border-none text-base text-white bg-black opacity-25 hover:opacity-100 transition duration-150 ease-in-out">&gt;</ButtonNext>
           </CarouselProvider>
-        </article>
-        <article className="mx-auto">
-          <img alt="Netlify" src="https://img.shields.io/netlify/d9859da3-d684-4c5a-8cdc-b3c310381a6d?label=BUILD&style=for-the-badge" className="my-4" />
-          <button type="button" className="text-white rounded-xl border bg-blue inline-block p-3 text-2xl hover:bg-teal" onClick={handleRebuild}>Click to Rebuild</button>
         </article>
       </section>
     </Layout>
