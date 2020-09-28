@@ -24,29 +24,24 @@ const GalleryPage = ({ data }) => {
   return (
     <Layout>
       <SiteMetadata title="Gallery" description="Product Images" />
-      <section className="container py-6 flex flex-wrap w-full">
-        <h1 className="text-3xl leading-tight font-extrabold tracking-tight pb-2 text-black">
-          Gallery
-        </h1>
-        <article>
-          <ul className="flex flex-wrap">
-            {edges?.map(({ node }, index) => (
-              <li key={node.id} id={node.id} tab-index="1" className="h-40 flex-grow m-0 p-0" onClick={() => handleOpenBigImage(index)}>
-                <Image
-                    cloudName="thesavagedev"
-                    publicId={node.public_id}
-                    className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
-                    alt="image"
-                    secure="true"
-                    format="webp"
-                  >
-                    <Transformation crop="fit" />
-                  </Image>
-              </li>
-            ))}
-            <li className="flex-grow"></li>
-          </ul>
-        </article>
+      <section className="container py-6 flex bg-blue flex-wrap w-full">
+        <ul className="flex flex-wrap">
+          {edges?.map(({ node }, index) => (
+            <li key={node.id} id={node.id} tab-index="1" className="h-40 flex-grow m-0 p-0 mb-3" onClick={() => handleOpenBigImage(index)}>
+              <Image
+                  cloudName="thesavagedev"
+                  publicId={node.public_id}
+                  className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
+                  alt="image"
+                  secure="true"
+                  format="webp"
+                >
+                  <Transformation crop="fit" />
+                </Image>
+            </li>
+          ))}
+          <li className="flex-grow"></li>
+        </ul>
       </section>
       <Modal isOpen={isOpen} setIsOpen={setIsOpen} publicId={bigPid} handleNext={handleNext} handlePrev={handlePrev} />
     </Layout>

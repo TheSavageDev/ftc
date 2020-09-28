@@ -10,11 +10,15 @@ const PurchasePage = () => (
           <h1 className="text-3xl leading-tight font-extrabold tracking-tight text-black p-0">
             Get One
           </h1>
-          <p className="text-xl leading-tight font-semibold tracking-tight text-blue">
+          <p className="text-xl leading-tight font-semibold tracking-tight text-blue mb-2">
             Currently we’re in pre-production providing a few trailers to customers for testing and recommended improvements.
           </p>
 
-          <p className="text-xl leading-tight font-semibold tracking-tight text-blue">
+          <p className="text-xl leading-tight font-semibold tracking-tight text-blue mb-2">
+            We anticipate the final MSRP to be less than $900.
+          </p>
+
+          <p className="text-xl leading-tight font-semibold tracking-tight text-blue mb-2">
             If you’d like to purchase a Foldaway Trailer, or participate in our testing program, please let us know using the form below and we’ll get back with you.
           </p>
         </header>

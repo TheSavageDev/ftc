@@ -1,6 +1,6 @@
 import { Image, Transformation, Video } from 'cloudinary-react';
 import { graphql } from "gatsby";
-import { CarouselProvider, Slide, Slider } from 'pure-react-carousel';
+import { CarouselProvider, Slide, Slider, ButtonBack, ButtonNext } from 'pure-react-carousel';
 import 'pure-react-carousel/dist/react-carousel.es.css';
 import React from "react";
 import Hero from "../components/Hero";
@@ -29,10 +29,11 @@ const IndexPage = ({ data }) => {
             totalSlides={7}
             naturalSlideHeight={135}
             naturalSlideWidth={250}
+            touchEnabled={true}
           >
             <Slider>
               {images?.map(({ node }, index) => (
-                <Slide index={index} key={node.id}>
+                <Slide index={index} key={node.id} className="flex justify-evenly">
                   <Image
                     cloudName="thesavagedev"
                     className="border-none max-h-full max-w-full object-cover align-bottom m-0 p-0"
@@ -45,6 +46,10 @@ const IndexPage = ({ data }) => {
                 </Slide>
               ))}
             </Slider>
+            <article className="flex justify-between">
+              <ButtonBack>Back</ButtonBack>
+              <ButtonNext>Next</ButtonNext>
+            </article>
           </CarouselProvider>
         </article>
         <article className="mx-auto">
