@@ -21,7 +21,7 @@ const Header = () => {
   `)
 
   return (
-    <header className="container py-4 bg-blue text-orange">
+    <header className="container py-4 bg-blue text-orange sticky">
       <section className="flex justify-between items-center">
         <Link to="/">
           <Image cloudName="thesavagedev" publicId="FTC/Logos/morbybaqrvv0sxhheqax" secure="true">
