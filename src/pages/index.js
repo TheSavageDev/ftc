@@ -21,7 +21,7 @@ const IndexPage = ({ data }) => {
           publicId={video.public_id}
           controls="true" />
         </article>
-        <article className="w-full lg:w-1/2">
+        <article className="w-full h-full lg:w-1/2">
           <CarouselProvider
             totalSlides={7}
             naturalSlideHeight={135}
