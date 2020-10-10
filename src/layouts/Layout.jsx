@@ -16,10 +16,6 @@ const Layout = ({ children }) => {
         {children}
       </main>
       <Footer />
-      <article className="mx-auto flex">
-          <img alt="Netlify" src="https://img.shields.io/netlify/d9859da3-d684-4c5a-8cdc-b3c310381a6d?label=BUILD&style=for-the-badge" className="my-4" />
-          <button type="button" className="text-white rounded-xl border bg-blue inline-block p-2 text-xl hover:bg-teal" onClick={handleRebuild}>Click to Rebuild</button>
-        </article>
     </div>
   )
 }
