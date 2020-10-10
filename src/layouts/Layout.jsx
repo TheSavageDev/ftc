@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
     fetch('https://api.netlify.com/build_hooks/5f624edcb0ade21370d21f3e', { method: 'POST' })
   }
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-100">
       <Header />
       <main className="flex-grow">
         {children}

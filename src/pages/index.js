@@ -14,7 +14,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <SiteMetadata title="Home" description="Website for Foldaway Tailer Company" />
       <Hero />
-      <section className="container flex flex-col p-0 lg:pb-4 lg:flex-row">
+      <section className="container flex flex-col lg:pb-4 lg:flex-row">
         <article className="w-full lg:w-1/2">
           <Video
           cloudName="thesavagedev"
