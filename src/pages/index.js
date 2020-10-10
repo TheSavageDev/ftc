@@ -15,13 +15,13 @@ const IndexPage = ({ data }) => {
       <SiteMetadata title="Home" description="Website for Foldaway Tailer Company" />
       <Hero />
       <section className="container flex flex-col lg:pb-4 lg:flex-row">
-        <article className="w-full lg:w-1/2">
+        <article className="w-full">
           <Video
           cloudName="thesavagedev"
           publicId={video.public_id}
           controls="true" />
         </article>
-        <article className="w-full h-full hidden lg:w-1/2 lg:visible">
+        {/* <article className="w-full h-full lg:w-1/2">
           <CarouselProvider
             totalSlides={7}
             naturalSlideHeight={135}
@@ -47,7 +47,7 @@ const IndexPage = ({ data }) => {
               <ButtonBack className="absolute inset-y-0 left-0 px-5 py-3 font-medium leading-snug border-none text-base text-white bg-black opacity-25 hover:opacity-100 transition duration-150 ease-in-out">&lt;</ButtonBack>
               <ButtonNext className="absolute inset-y-0 right-0 px-5 py-3 font-medium leading-snug border-none text-base text-white bg-black opacity-25 hover:opacity-100 transition duration-150 ease-in-out">&gt;</ButtonNext>
           </CarouselProvider>
-        </article>
+        </article> */}
       </section>
     </Layout>
   )
